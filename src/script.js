@@ -33,7 +33,6 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace;
 
 const fontLoader = new FontLoader();
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-
   const textGeometry = new TextGeometry("The Best \nCourse of \nThree.js", {
     font: font,
     size: 0.5,
@@ -46,7 +45,6 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     bevelSegments: 4,
   });
 
-
   //   textGeometry.computeBoundingBox();
   //   textGeometry.translate(
   //     -(textGeometry.boundingBox.max.x - 0.05) * 0.5,
@@ -56,8 +54,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
 
   textGeometry.center();
 
-  //   const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
-  const material = new THREE.MeshNormalMaterial();
+  const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
+  //   const material = new THREE.MeshNormalMaterial();
 
   const text = new THREE.Mesh(textGeometry, material);
   scene.add(text);
